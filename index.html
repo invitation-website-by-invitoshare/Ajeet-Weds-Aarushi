@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="hi" data-lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Aarushi & Ajeet | शुभ विवाह निमंत्रण</title>
+<meta name="description" content="शुभ विवाह निमंत्रण — Aarushi weds Ajeet. आप सपरिवार सादर आमंत्रित हैं।">
+<meta name="theme-color" content="#14060d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aarushi & Ajeet — शुभ विवाह निमंत्रण">
+<meta property="og:description" content="आप सपरिवार सादर आमंत्रित हैं">
+<!-- WhatsApp preview ke liye: neeche apni full GitHub Pages URL + photo ka naam daal kar uncomment karo -->
+<!-- <meta property="og:image" content="https://USERNAME.github.io/REPO/img1.jpg"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff4f93;--pink2:#ff8fbd;--blush:#ffd9e8;--rose:#c2185b;--ink:#2b0d1b;--gold:#f2cf8e;--ls:.28em;
+  --f-body:'Poppins',sans-serif;
+  --f-disp:'Cormorant Garamond','Tiro Devanagari Hindi',serif;
+  --f-script:'Great Vibes','Tiro Devanagari Hindi',cursive;
+}
+html[data-lang="hi"]{--ls:.02em;--f-disp:'Tiro Devanagari Hindi',serif;--f-script:'Tiro Devanagari Hindi',serif}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);color:#fff;background:#0b0509;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+img{max-width:100%}
+button{font:inherit}
+main{transition:opacity .22s}
+.ls{letter-spacing:var(--ls)}
+
+/* ===== Background: black + white + pink gradient ===== */
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:linear-gradient(165deg,#06050a 0%,#1a0712 36%,#4a1030 68%,#0a0408 100%)}
+.bg i{position:absolute;border-radius:50%;will-change:transform}
+.bg i:nth-child(1){width:90vmax;height:90vmax;left:-35vmax;top:-30vmax;background:radial-gradient(circle,rgba(255,61,139,.7),transparent 62%);animation:d1 24s ease-in-out infinite alternate}
+.bg i:nth-child(2){width:75vmax;height:75vmax;right:-30vmax;top:20vh;background:radial-gradient(circle,rgba(255,255,255,.32),transparent 62%);animation:d2 30s ease-in-out infinite alternate}
+.bg i:nth-child(3){width:85vmax;height:85vmax;left:-10vmax;bottom:-45vmax;background:radial-gradient(circle,rgba(255,143,189,.6),transparent 62%);animation:d3 27s ease-in-out infinite alternate}
+.bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.6) 100%)}
+@keyframes d1{to{transform:translate(18vmax,14vmax)}}
+@keyframes d2{to{transform:translate(-16vmax,-10vmax)}}
+@keyframes d3{to{transform:translate(14vmax,-12vmax)}}
+#petals{position:fixed;inset:0;z-index:101;pointer-events:none}
+
+/* ===== Floating buttons ===== */
+.fab{position:fixed;bottom:calc(12px + env(safe-area-inset-bottom));z-index:120}
+#langBtn{left:10px;display:flex;align-items:center;gap:3px;padding:3px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(20,6,13,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:.6rem;line-height:1.2;cursor:pointer;box-shadow:0 2px 10px rgba(255,79,147,.3)}
+#langBtn span{font-size:.7rem}
+body.lock #langBtn{display:none}
+#musicBtn{right:10px;width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(20,6,13,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:.75rem;line-height:1;cursor:pointer;box-shadow:0 2px 10px rgba(255,79,147,.3);display:none}
+body:not(.lock) #musicBtn{display:grid;place-items:center}
+#musicBtn.on::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--pink);animation:ping 1.8s ease-out infinite}
+@keyframes ping{from{transform:scale(1);opacity:.9}to{transform:scale(1.7);opacity:0}}
+
+/* ===== Front page (full-screen video, tap to open) ===== */
+#env{position:fixed;inset:0;z-index:150;background:#06050a;transition:opacity 1.2s ease;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#env.done{opacity:0;pointer-events:none}
+#env.novid{background:radial-gradient(circle at 50% 42%,#c2185b,#1a0712 55%,#06050a)}
+#env video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+/* ===== Generic ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;border:0;cursor:pointer;color:#fff;font-weight:500;font-size:.95rem;text-decoration:none;background:linear-gradient(135deg,#ff4f93,#ff8fbd);box-shadow:0 10px 30px rgba(255,79,147,.45);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 40px rgba(255,79,147,.6)}
+.btn.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.4);box-shadow:none}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.sec{max-width:1100px;margin:auto;padding:84px 18px}
+.eyebrow{text-align:center;color:var(--pink2);font-size:.74rem;text-transform:uppercase;letter-spacing:var(--ls)}
+.h2{font-family:var(--f-disp);font-weight:600;font-size:clamp(2rem,6.4vw,3.3rem);text-align:center;line-height:1.25;margin:.25em 0 .1em;text-shadow:0 0 30px rgba(255,79,147,.45)}
+.orn{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--pink2);margin:10px auto 40px;max-width:320px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--pink2),transparent)}
+.rv{opacity:0;translate:0 34px;transition:opacity .9s ease,translate .9s ease;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;translate:0 0}
+@keyframes up{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+
+/* ===== Hero ===== */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:70px 18px 100px}
+.hero-in>*{opacity:0}
+body.go .hero-in>*{animation:up 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*.16s + .15s)}
+.hero-top{font-family:var(--f-disp);color:var(--gold);font-size:clamp(1rem,3.4vw,1.35rem)}
+.names{font-family:var(--f-script);font-weight:400;line-height:1.05;font-size:clamp(3.4rem,15vw,7.4rem);margin:.15em 0;text-shadow:0 0 40px rgba(255,79,147,.6),0 4px 18px rgba(0,0,0,.5)}
+html[data-lang="hi"] .names{line-height:1.3}
+.names span,.names em{display:block}
+.names em{font-style:normal;color:var(--pink2);font-size:.5em;line-height:1.1}
+@media(min-width:800px){.names span,.names em{display:inline-block}.names em{margin:0 .35em}}
+.hero-sub{color:var(--blush);font-style:italic;max-width:520px;margin:6px auto 18px}
+.hero-date{font-family:var(--f-disp);font-size:clamp(1.15rem,4vw,1.6rem)}
+.cd{display:flex;gap:10px;justify-content:center;margin:26px 0 6px}
+.cd div{min-width:68px;padding:12px 6px;border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.cd b{display:block;font-family:var(--f-disp);font-size:1.8rem;font-weight:700;line-height:1.2}
+.cd small{font-size:.68rem;color:var(--blush);letter-spacing:var(--ls)}
+.cd-done{color:var(--gold);font-size:1.2rem;margin-top:22px}
+.cue{display:inline-block;margin-top:34px;color:var(--blush);text-decoration:none;font-size:.8rem;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+/* ===== Gallery ===== */
+.frame{position:relative;margin:0;overflow:hidden;cursor:zoom-in;background:linear-gradient(135deg,#ffd9e8,#ff8fbd)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .9s}
+.frame:hover img{transform:scale(1.08)}
+.frame .ph{display:none;position:absolute;inset:0;place-items:center;align-content:center;font-size:2.4rem;text-align:center;color:#fff;cursor:default}
+.frame .ph small{display:block;font-size:.75rem;letter-spacing:.1em}
+.frame.missing img{display:none}
+.frame.missing .ph{display:grid}
+.rects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(min-width:800px){.rects{grid-template-columns:repeat(4,1fr);gap:24px}}
+.rect{aspect-ratio:3/4;border-radius:18px;border:5px solid #fff;box-shadow:0 14px 40px rgba(255,79,147,.4);transform:rotate(var(--r,0deg)) translateY(var(--y,0));transition:transform .5s,box-shadow .5s}
+.cell:nth-child(1) .rect{--r:-2deg}
+.cell:nth-child(2) .rect{--r:1.5deg;--y:18px}
+.cell:nth-child(3) .rect{--r:-1.5deg}
+.cell:nth-child(4) .rect{--r:2deg;--y:18px}
+.rect:hover{transform:rotate(0) translateY(-6px) scale(1.03);box-shadow:0 22px 55px rgba(255,79,147,.65)}
+.rounds{display:grid;grid-template-columns:1fr 1fr;gap:34px 22px;justify-items:center;margin:74px auto 0;max-width:900px}
+.r-wrap{position:relative;width:min(42vw,200px)}
+.r-wrap:first-child{grid-column:1/-1;width:min(66vw,300px)}
+.r-wrap::before{content:"";position:absolute;inset:-12px;border-radius:50%;border:1.5px dashed rgba(255,209,227,.8);pointer-events:none}
+.r-wrap::after{content:"❀";color:var(--pink2);position:absolute;top:-26px;left:50%;translate:-50% 0;font-size:1.3rem;filter:drop-shadow(0 0 8px rgba(255,79,147,.9))}
+.round{aspect-ratio:1;border-radius:50%;border:6px solid #fff;box-shadow:0 0 0 3px var(--pink),0 0 0 10px rgba(255,255,255,.16),0 18px 50px rgba(255,79,147,.5)}
+.round::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.38) 0%,rgba(255,255,255,0) 35%);pointer-events:none}
+@media(min-width:800px){
+  .rounds{grid-template-columns:1fr 1.3fr 1fr;align-items:center;gap:44px}
+  .r-wrap,.r-wrap:first-child{width:100%}
+  .r-wrap:first-child{grid-column:auto;order:2}
+}
+
+/* ===== Video ===== */
+.video-box{position:relative;max-width:860px;margin:auto;aspect-ratio:16/9;border-radius:24px;overflow:hidden;border:5px solid #fff;background:linear-gradient(135deg,#3a0f26,#ff4f93);box-shadow:0 20px 60px rgba(255,79,147,.45)}
+.video-box video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.vph{display:none;position:absolute;inset:0;place-items:center;text-align:center;padding:20px;font-size:1.1rem}
+.video-box.missing video{display:none}
+.video-box.missing .vph{display:grid}
+
+/* ===== Invitation card ===== */
+.card{position:relative;max-width:700px;margin:auto;text-align:center;color:var(--ink);padding:54px 26px;border-radius:30px;background:linear-gradient(180deg,#fff,#fff0f6);box-shadow:0 24px 70px rgba(255,79,147,.45);outline:1.5px solid rgba(255,79,147,.45);outline-offset:-14px}
+.card::before,.card::after{content:"❀";position:absolute;font-size:1.6rem;color:var(--pink)}
+.card::before{top:18px;left:24px}.card::after{bottom:18px;right:24px}
+.inv-head{font-family:var(--f-disp);font-weight:700;color:var(--rose);font-size:clamp(1.4rem,5vw,2rem);margin-bottom:14px}
+.card p{font-size:1.02rem}
+.card .big{font-family:var(--f-script);font-weight:400;color:var(--rose);font-size:clamp(2.6rem,10vw,4rem);line-height:1.3;margin:.1em 0}
+.card .par{color:#6b3a52;font-size:.95rem;margin-bottom:10px}
+.card .mid{font-family:var(--f-disp);font-size:1.3rem;font-weight:600;margin:12px 0 4px}
+.card .orn{color:var(--pink);margin:22px auto}
+.card .orn::before,.card .orn::after{background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.card .bless{font-style:italic;color:#6b3a52}
+
+/* ===== Scratch card (pink) ===== */
+.scratch{position:relative;width:min(90vw,380px);height:240px;margin:0 auto;border-radius:28px;padding:2px;background:linear-gradient(145deg,#ff8fbd,#fff,#ff4f93);box-shadow:0 20px 60px rgba(255,79,147,.45)}
+.scratch-inner{position:absolute;inset:2px;border-radius:26px;display:grid;place-items:center;text-align:center;padding:24px;color:var(--ink);background:linear-gradient(160deg,#fff,#ffe3ef)}
+.reveal-date{font-family:var(--f-disp);font-weight:700;font-size:clamp(2rem,9vw,2.9rem);line-height:1.2;color:var(--rose)}
+.reveal-day{margin-top:8px;color:var(--pink);font-size:.8rem;letter-spacing:var(--ls);text-transform:uppercase}
+#scratchCv{position:absolute;inset:2px;width:calc(100% - 4px);height:calc(100% - 4px);border-radius:26px;touch-action:none;cursor:crosshair;transition:opacity .9s}
+.scratch.done #scratchCv{opacity:0;pointer-events:none}
+.scratch-ov{position:absolute;inset:2px;display:grid;place-content:center;text-align:center;color:#fff;pointer-events:none;transition:opacity .4s;text-shadow:0 2px 10px rgba(150,10,70,.6)}
+.scratch-ov .big{font-family:var(--f-disp);font-size:1.6rem;font-weight:700}
+.scratch-ov small{display:block;font-size:.72rem;opacity:.9;margin-top:4px}
+.scratch.started .scratch-ov,.scratch.done .scratch-ov{opacity:0}
+
+/* ===== Details ===== */
+.det-grid{display:grid;gap:16px;grid-template-columns:1fr;max-width:960px;margin:auto}
+@media(min-width:760px){.det-grid{grid-template-columns:repeat(3,1fr)}}
+.det{text-align:center;color:var(--ink);padding:28px 20px;border-radius:22px;border-top:4px solid var(--pink);background:rgba(255,255,255,.95);box-shadow:0 12px 36px rgba(255,79,147,.3)}
+.det .ic{display:block;line-height:0;margin-bottom:8px}
+.det h4{font-family:var(--f-disp);color:var(--rose);font-size:1.3rem;margin:.1em 0 .2em}
+.fam{text-align:center;max-width:560px;margin:34px auto 0;font-family:var(--f-disp);font-size:1.3rem;color:var(--blush)}
+
+/* ===== Gita ===== */
+.gita{position:relative;max-width:760px;margin:auto;padding:40px 22px 30px;text-align:center;border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,79,147,.13));border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 20px 60px rgba(255,79,147,.28)}
+.slide{display:none}
+.slide.on{display:block;animation:fadein .9s both}
+.sk{font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(1.25rem,4.6vw,1.9rem);line-height:1.9;white-space:pre-line;text-shadow:0 0 22px rgba(255,150,200,.65)}
+.gref{margin:16px 0 8px;color:var(--gold);font-size:.82rem;letter-spacing:var(--ls)}
+.gm{color:var(--blush);max-width:560px;margin:auto}
+.gnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:24px}
+.gnav button.ar{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);color:#fff;font-size:1.2rem;cursor:pointer}
+.dot{width:9px;height:9px;border-radius:9px;background:rgba(255,255,255,.35);border:0;padding:0;cursor:pointer;transition:.3s}
+.dot.on{background:var(--pink);width:26px}
+
+/* ===== Wishes ===== */
+.wsub{text-align:center;color:var(--blush);margin:-18px auto 38px;max-width:520px}
+.wgrid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:700px){.wgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.wgrid{grid-template-columns:repeat(3,1fr)}}
+.wish{position:relative;overflow:hidden;color:var(--ink);padding:24px 22px 24px 26px;border-radius:20px;background:rgba(255,255,255,.95);box-shadow:0 12px 34px rgba(0,0,0,.35)}
+.wish::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--pink),var(--pink2))}
+.wish i{color:var(--pink);display:block;font-style:normal;font-size:1.8rem;margin-bottom:4px}
+
+/* ===== Footer ===== */
+footer{padding:50px 18px 90px;text-align:center}
+.host{max-width:520px;margin:20px auto;padding:28px 22px;border-radius:24px;color:var(--ink);background:rgba(255,255,255,.95);box-shadow:0 16px 46px rgba(255,79,147,.35)}
+.host h3{font-family:var(--f-disp);color:var(--rose);font-size:1.5rem}
+.host a{color:var(--rose);font-weight:500;text-decoration:none}
+.foot-msg{font-family:var(--f-disp);font-size:1.3rem;color:var(--blush);margin-top:26px}
+.made{margin-top:18px;color:var(--blush);font-size:.85rem;line-height:1.9}
+.made a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px dashed var(--pink2)}
+
+/* ===== Lightbox ===== */
+.lb{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:16px;background:rgba(5,2,4,.92);cursor:zoom-out}
+.lb img{max-height:90vh;border-radius:14px;border:4px solid #fff;box-shadow:0 0 60px rgba(255,79,147,.5)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero-in>*{opacity:1}.rv{opacity:1;translate:none}}
+</style>
+</head>
+<body class="lock">
+
+<div class="bg"><i></i><i></i><i></i></div>
+<canvas id="petals"></canvas>
+
+<!-- ===== Language + Music buttons ===== -->
+<button id="langBtn" class="fab" aria-label="Change language / भाषा बदलें"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16.5 0 19M12 2.5c-3 3-3 16.5 0 19"/></svg><i id="langLbl" style="font-style:normal"></i></button>
+<button id="musicBtn" class="fab" aria-label="Music"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9a4.2 4.2 0 010 6M18.8 6.5a8 8 0 010 11"/></svg></button>
+
+<!-- ===== FRONT PAGE (Smindex.html jaisa): video ka pehla frame cover hai, tap karte hi video + music shuru, 8 sec baad website. File: repo root me "intro.mp4". Koi text/symbol nahi ===== -->
+<div id="env" role="button" tabindex="0" aria-label="Invitation kholein">
+  <video id="introVideo" src="intro.mp4#t=0.1" playsinline preload="auto"></video>
+</div>
+
+<!-- Music file: repo root me "music.mp3" -->
+<audio id="bgm" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <header class="hero" id="top">
+    <div class="hero-in">
+      <p class="hero-top" data-t="hero_top"></p>
+      <h1 class="names"><span data-name="bride"></span><em>&amp;</em><span data-name="groom"></span></h1>
+      <p class="hero-sub" data-t="hero_sub"></p>
+      <p class="hero-date" id="heroDate"></p>
+      <div class="cd" id="cd">
+        <div><b id="cdD">0</b><small data-t="cd_d"></small></div>
+        <div><b id="cdH">00</b><small data-t="cd_h"></small></div>
+        <div><b id="cdM">00</b><small data-t="cd_m"></small></div>
+        <div><b id="cdS">00</b><small data-t="cd_s"></small></div>
+      </div>
+      <p class="cd-done" id="cdDone" hidden data-t="cd_done"></p>
+      <a class="cue" href="#moments"><span data-t="cue"></span><br>⌄</a>
+    </div>
+  </header>
+
+  <!-- ===== Photos: 4 rectangle + 3 circle windows ===== -->
+  <section class="sec" id="moments">
+    <p class="eyebrow rv" data-t="mom_eyebrow"></p>
+    <h2 class="h2 rv" data-t="mom_title"></h2>
+    <div class="orn rv">❀</div>
+    <div class="rects" id="rects"></div>
+    <div class="rounds" id="rounds"></div>
+  </section>
+
+  <!-- ===== Invitation ===== -->
+  <section class="sec" id="invite">
+    <article class="card rv">
+      <p class="inv-head" data-t="inv_head"></p>
+      <p data-t="inv_1"></p>
+      <h3 class="big" data-name="groom"></h3>
+      <p class="par" data-t="inv_gpar"></p>
+      <p class="mid" data-t="inv_mid"></p>
+      <h3 class="big" data-name="bride"></h3>
+      <p class="par" data-t="inv_bpar"></p>
+      <p data-t="inv_tail"></p>
+      <div class="orn">❀</div>
+      <p class="bless" data-t="inv_bless"></p>
+    </article>
+  </section>
+
+  <!-- ===== Video: repo root me "video.mp4" ===== -->
+  <section class="sec" id="film">
+    <p class="eyebrow rv" data-t="film_eyebrow"></p>
+    <h2 class="h2 rv" data-t="film_title"></h2>
+    <div class="orn rv">❀</div>
+    <div class="video-box rv" id="vbox">
+      <video id="vid" controls playsinline preload="metadata"><source src="video.mp4#t=0.1" type="video/mp4"></video>
+      <div class="vph"><span data-t="film_ph"></span></div>
+    </div>
+  </section>
+
+  <!-- ===== Scratch card: date reveal ===== -->
+  <section class="sec" id="reveal">
+    <p class="eyebrow rv" data-t="scr_eyebrow"></p>
+    <h2 class="h2 rv" data-t="scr_title"></h2>
+    <div class="orn rv">❀</div>
+    <p class="wsub rv" data-t="scr_sub"></p>
+    <div class="scratch rv" id="scratchBox">
+      <div class="scratch-inner"><div><div class="reveal-date" id="scrDate"></div><div class="reveal-day" id="scrDay"></div></div></div>
+      <canvas id="scratchCv"></canvas>
+      <div class="scratch-ov"><span class="big" data-t="scr_cover"></span><small data-t="scr_hint"></small></div>
+    </div>
+  </section>
+
+  <!-- ===== Details ===== -->
+  <section class="sec" id="details">
+    <p class="eyebrow rv" data-t="det_eyebrow"></p>
+    <h2 class="h2 rv" data-t="det_title"></h2>
+    <div class="orn rv">❀</div>
+    <div class="det-grid">
+      <div class="det rv"><span class="ic"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#ff4f93" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><h4 data-t="d_date"></h4><p id="dDate"></p></div>
+      <div class="det rv" style="--d:.12s"><span class="ic"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#ff4f93" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><h4 data-t="d_time"></h4><p id="dTime"></p></div>
+      <a class="det rv" id="venueCard" style="--d:.24s;text-decoration:none;display:block" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#ff4f93" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><h4 data-t="d_venue"></h4><p id="dVenue"></p></a>
+    </div>
+    <div class="cta rv">
+      <a class="btn" id="mapBtn" target="_blank" rel="noopener" data-t="btn_map"></a>
+      <a class="btn ghost" id="calBtn" target="_blank" rel="noopener" data-t="btn_cal"></a>
+    </div>
+    <p class="fam rv" data-t="fam"></p>
+  </section>
+
+  <!-- ===== Bhagavad Gita ===== -->
+  <section class="sec" id="gita">
+    <p class="eyebrow rv" data-t="gita_eyebrow"></p>
+    <h2 class="h2 rv" data-t="gita_title"></h2>
+    <div class="orn rv">❀</div>
+    <div class="gita rv" id="gitaBox">
+      <div id="slides"></div>
+      <div class="gnav"><button class="ar" id="gPrev" aria-label="Previous">‹</button><span id="gDots" style="display:flex;gap:8px;align-items:center"></span><button class="ar" id="gNext" aria-label="Next">›</button></div>
+    </div>
+  </section>
+
+  <!-- ===== Wishes ===== -->
+  <section class="sec" id="wishes">
+    <p class="eyebrow rv" data-t="wish_eyebrow"></p>
+    <h2 class="h2 rv" data-t="wish_title"></h2>
+    <div class="orn rv">❀</div>
+    <p class="wsub rv" data-t="wish_sub"></p>
+    <div class="wgrid" id="wgrid"></div>
+    <div class="cta rv"><a class="btn" id="waBtn" target="_blank" rel="noopener" data-t="btn_wa"></a></div>
+  </section>
+
+  <!-- ===== Footer / Aamantrak ===== -->
+  <footer>
+    <p class="eyebrow rv" data-t="host_head"></p>
+    <div class="host rv"><h3 id="hName"></h3><p id="hAddr"></p><a id="hPhone"></a></div>
+    <p class="foot-msg rv" data-t="foot_msg"></p>
+    <p class="made rv"><span data-t="foot_made"></span><br><span data-t="foot_contact"></span><a href="tel:+918400056109">8400056109</a></p>
+  </footer>
+</main>
+
+<div class="lb" id="lb" hidden><img alt=""></div>
+
+<script>
+/* =====================================================
+   CONFIG — yahin se sab kuch badlo
+   ===================================================== */
+const CONFIG={
+  dateISO:'2026-12-06T19:00:00+05:30',          // shaadi ki date & time (countdown isi se chalta hai)
+  names:{
+    bride:{hi:'आरुषि',en:'Aarushi'},
+    groom:{hi:'अजीत',en:'Ajeet'},
+    groomFather:{hi:'[पिता का नाम]',en:"[Groom's Father Name]"},
+    groomMother:{hi:'[माता का नाम]',en:"[Groom's Mother Name]"},
+    brideFather:{hi:'[लड़की के पिता का नाम]',en:"[Bride's Father Name]"},
+    brideMother:{hi:'[लड़की की माता का नाम]',en:"[Bride's Mother Name]"}
+  },
+  time:{hi:'[समय]',en:'[Time]',hn:'[Samay]'},
+  venue:{hi:'[स्थान/वेन्यू का नाम व पता]',en:'[Venue name & address]'},
+  mapUrl:'',                                      // Google Maps ka exact share link (e.g. https://maps.app.goo.gl/xxxx) — optional
+  mapQuery:'',                                    // optional: map par search hone wala text (khaali = upar wala venue address use hoga)
+  host:{name:{hi:'[आपका नाम/परिवार का नाम]',en:'[Your / Family Name]'},address:{hi:'[पता]',en:'[Address]'},phone:'[संपर्क नंबर]'},
+  whatsapp:'',                                    // e.g. '919876543210' (country code ke saath)
+  images:{
+    rect:['img1','img2','img3','img4'],           // 4 rectangle photos  -> img1.jpg ... img4.jpg
+    round:['img5','img6','img7']                  // 3 circle photos     -> img5.jpg ... img7.jpg
+  }
+};
+
+/* ================= Translations ================= */
+const HEART='<svg viewBox="0 0 24 24" width="13" height="13" fill="#ff4f93" style="vertical-align:-2px"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+const I18N={
+hi:{
+ hero_top:'|| शुभ विवाह निमंत्रण ||',hero_sub:'दो दिल, एक बंधन, सात जन्मों का साथ',
+ cd_d:'दिन',cd_h:'घंटे',cd_m:'मिनट',cd_s:'सेकंड',cd_done:'शुभ घड़ी आ गई है',cue:'नीचे देखें',
+ mom_eyebrow:'हमारे यादगार पल',mom_title:'प्रेम की झलकियाँ',
+ inv_head:'|| शुभ विवाह निमंत्रण ||',inv_1:'सप्रेम निवेदन है कि हमारे प्रिय पुत्र',
+ inv_gpar:'सुपुत्र श्री {groomFather} एवं श्रीमती {groomMother}',inv_mid:'का शुभ विवाह',
+ inv_bpar:'सुपुत्री श्री {brideFather} एवं श्रीमती {brideMother}',inv_tail:'के साथ संपन्न होने जा रहा है।',
+ inv_bless:'इस शुभ अवसर पर आपकी स्नेहिल उपस्थिति एवं आशीर्वाद की अपेक्षा है।',
+ film_eyebrow:'हमारी कहानी',film_title:'हमारी प्रेम कहानी',film_ph:'हमारी वीडियो जल्द ही यहाँ दिखेगी',
+ det_eyebrow:'शुभ मुहूर्त',det_title:'कार्यक्रम विवरण',d_date:'तिथि',d_time:'समय',d_venue:'स्थान',
+ btn_map:'गूगल मैप में खोलें',btn_cal:'कैलेंडर में जोड़ें',cal_title:'{bride} & {groom} — शुभ विवाह',
+ fam:'आप सपरिवार पधारकर वर-वधू को आशीर्वाद प्रदान करें।',
+ gita_eyebrow:'श्रीमद्भगवद्गीता',gita_title:'गीता का आशीर्वाद',gita_ref:'श्रीमद्भगवद्गीता • अध्याय {c}, श्लोक {v}',
+ wish_eyebrow:'शुभकामनाएँ',wish_title:'दिल से ढेरों शुभकामनाएँ',wish_sub:'आपका आशीर्वाद ही हमारे लिए सबसे बड़ा उपहार है।',
+ btn_wa:'व्हाट्सऐप पर शुभकामना भेजें',wa_msg:'{bride} & {groom} को शुभ विवाह की हार्दिक शुभकामनाएँ! ईश्वर आपकी जोड़ी सदा सलामत रखे।',
+ host_head:'आमंत्रक',foot_msg:'आपकी उपस्थिति हमारी खुशियों को पूर्ण करेगी।',
+ scr_eyebrow:'एक छोटी-सी सरप्राइज़',scr_title:'तारीख़ का खुलासा',scr_sub:'गुलाबी कार्ड को स्क्रैच करें और हमारे शुभ विवाह का दिन जानें।',scr_cover:'यहाँ स्क्रैच करें',scr_hint:'उँगली या माउस से रगड़ें',scr_dayt:'शुभ विवाह',
+ foot_made:'प्यार से बनाया गया '+HEART,foot_contact:'अधिक जानकारी के लिए संपर्क करें - '
+},
+en:{
+ hero_top:'|| Wedding Invitation ||',hero_sub:'Two hearts, one bond, seven lifetimes together',
+ cd_d:'Days',cd_h:'Hours',cd_m:'Mins',cd_s:'Secs',cd_done:'The celebrations have begun',cue:'Scroll down',
+ mom_eyebrow:'Our Moments',mom_title:'Glimpses of Love',
+ inv_head:'|| Wedding Invitation ||',inv_1:'With love and humility, we request your presence at the auspicious wedding of our dear son',
+ inv_gpar:'Son of Shri {groomFather} &amp; Smt. {groomMother}',inv_mid:'who will be united in holy matrimony with',
+ inv_bpar:'Daughter of Shri {brideFather} &amp; Smt. {brideMother}',inv_tail:'in a ceremony filled with love, tradition and blessings.',
+ inv_bless:'Your affectionate presence and blessings on this joyous occasion are earnestly requested.',
+ film_eyebrow:'Our Story',film_title:'Our Love Story',film_ph:'Our film will appear here soon',
+ det_eyebrow:'Save the Date',det_title:'Event Details',d_date:'Date',d_time:'Time',d_venue:'Venue',
+ btn_map:'Open in Google Maps',btn_cal:'Add to Calendar',cal_title:'{bride} & {groom} — Wedding',
+ fam:'Please join us with your family and bless the couple.',
+ gita_eyebrow:'Shrimad Bhagavad Gita',gita_title:'Blessings from the Gita',gita_ref:'Bhagavad Gita • Chapter {c}, Verse {v}',
+ wish_eyebrow:'Blessings & Wishes',wish_title:'Heartfelt Wishes',wish_sub:'Your blessings are the greatest gift for us.',
+ btn_wa:'Send Wishes on WhatsApp',wa_msg:'Heartfelt wishes to {bride} & {groom} on their wedding! May God keep your pair blessed always.',
+ host_head:'With Love, Invited By',foot_msg:'Your presence will make our joy complete.',
+ scr_eyebrow:'A Little Surprise',scr_title:'Reveal the Date',scr_sub:'Scratch the pink card to reveal the day of our wedding.',scr_cover:'Scratch here',scr_hint:'use your finger or mouse',scr_dayt:'Wedding Day',
+ foot_made:'Made with '+HEART,foot_contact:'contact for more details - '
+},
+hn:{
+ hero_top:'|| Shubh Vivah Nimantran ||',hero_sub:'Do dil, ek bandhan, saat janmon ka saath',
+ cd_d:'Din',cd_h:'Ghante',cd_m:'Minute',cd_s:'Second',cd_done:'Shubh ghadi aa gayi hai',cue:'Neeche dekhiye',
+ mom_eyebrow:'Hamare Yaadgaar Pal',mom_title:'Prem ki Jhalkiyan',
+ inv_head:'|| Shubh Vivah Nimantran ||',inv_1:'Saprem nivedan hai ki hamare priya putra',
+ inv_gpar:'Suputra Shri {groomFather} evam Smt. {groomMother}',inv_mid:'ka shubh vivah',
+ inv_bpar:'Suputri Shri {brideFather} evam Smt. {brideMother}',inv_tail:'ke saath sampann hone ja raha hai.',
+ inv_bless:'Is shubh avsar par aapki snehil upasthiti evam aashirvaad ki apeksha hai.',
+ film_eyebrow:'Hamari Kahani',film_title:'Hamari Prem Kahani',film_ph:'Hamari video jald hi yahan dikhegi',
+ det_eyebrow:'Shubh Muhurat',det_title:'Karyakram Vivaran',d_date:'Tithi',d_time:'Samay',d_venue:'Sthaan',
+ btn_map:'Google Maps me kholiye',btn_cal:'Calendar mein jodiye',cal_title:'{bride} & {groom} — Shubh Vivah',
+ fam:'Aap saparivar padharkar var-vadhu ko aashirvaad pradaan karein.',
+ gita_eyebrow:'Shrimad Bhagavad Gita',gita_title:'Gita ka Aashirvaad',gita_ref:'Bhagavad Gita • Adhyay {c}, Shlok {v}',
+ wish_eyebrow:'Shubhkamnayein',wish_title:'Dil se Dher Saari Shubhkamnayein',wish_sub:'Aapka aashirvaad hi hamare liye sabse bada uphaar hai.',
+ btn_wa:'WhatsApp par Shubhkamna Bhejiye',wa_msg:'{bride} & {groom} ko shubh vivah ki hardik shubhkamnayein! Ishwar aapki jodi sada salamat rakhe.',
+ host_head:'Aamantrak',foot_msg:'Aapki upasthiti hamari khushiyon ko poora karegi.',
+ scr_eyebrow:'Ek Chhoti si Surprise',scr_title:'Tarikh ka Khulasa',scr_sub:'Gulabi card ko scratch kijiye aur hamare shubh vivah ka din jaaniye.',scr_cover:'Yahan scratch kijiye',scr_hint:'Ungli ya mouse se ragdiye',scr_dayt:'Shubh Vivah',
+ foot_made:'Made with '+HEART,foot_contact:'Aur jaankari ke liye contact karein - '
+}};
+
+/* ============ Bhagavad Gita shlok ============ */
+const GITA=[
+ {c:3,v:11,sk:"देवान्भावयतानेन ते देवा भावयन्तु वः।\nपरस्परं भावयन्तः श्रेयः परमवाप्स्यथ॥",
+  m:{hi:"भावार्थ: एक-दूसरे का सम्मान और पोषण करते हुए ही परम कल्याण की प्राप्ति होती है।",
+     en:"Essence: By nurturing and uplifting one another, you attain the highest good.",
+     hn:"Bhavarth: Ek-dusre ka samman aur poshan karte hue hi param kalyan ki prapti hoti hai."}},
+ {c:6,v:32,sk:"आत्मौपम्येन सर्वत्र समं पश्यति योऽर्जुन।\nसुखं वा यदि वा दुःखं स योगी परमो मतः॥",
+  m:{hi:"भावार्थ: जो दूसरे के सुख-दुःख को अपना ही सुख-दुःख समझता है, वही श्रेष्ठ है।",
+     en:"Essence: The best is the one who feels another's joy and sorrow as their own.",
+     hn:"Bhavarth: Jo doosre ke sukh-dukh ko apna hi sukh-dukh samajhta hai, wahi shreshth hai."}},
+ {c:7,v:11,sk:"बलं बलवतां चाहं कामरागविवर्जितम्।\nधर्माविरुद्धो भूतेषु कामोऽस्मि भरतर्षभ॥",
+  m:{hi:"भावार्थ: धर्म के अनुकूल प्रेम और कामना ईश्वर का ही स्वरूप है — यही पवित्र दांपत्य की भावना है।",
+     en:"Essence: Love and desire in harmony with dharma are divine — the very spirit of a sacred marriage.",
+     hn:"Bhavarth: Dharm ke anukool prem aur kaamna Ishwar ka hi swaroop hai — yahi pavitra daampatya ki bhavna hai."}},
+ {c:18,v:78,sk:"यत्र योगेश्वरः कृष्णो यत्र पार्थो धनुर्धरः।\nतत्र श्रीर्विजयो भूतिर्ध्रुवा नीतिर्मतिर्मम॥",
+  m:{hi:"भावार्थ: जहाँ योगेश्वर श्रीकृष्ण और धनुर्धर अर्जुन हैं, वहाँ श्री, विजय, ऐश्वर्य और अटल नीति सदा रहती है — आपके जीवन में भी ऐसा ही हो।",
+     en:"Essence: Where Krishna, Lord of Yoga, and Arjuna, the archer, stand together, there are prosperity, victory, abundance and righteousness — may it be so in your life.",
+     hn:"Bhavarth: Jahan Yogeshwar Shri Krishna aur dhanurdhar Arjun hain, wahan shree, vijay, aishwarya aur achal neeti sada rehti hai — aapke jeevan mein bhi aisa hi ho."}}
+];
+
+/* ============ Shubhkamnayein ============ */
+const WISHES=[
+ {ic:'❀',hi:'आपका दांपत्य जीवन प्रेम, विश्वास और सम्मान की मज़बूत डोर से सदा बंधा रहे।',en:'May your marriage always be held together by love, trust and respect.',hn:'Aapka daampatya jeevan prem, vishwas aur samman ki majboot dor se sada bandha rahe.'},
+ {ic:'❁',hi:'अग्नि के सात फेरे, सात वचन — आपके जीवन में सुख, सौभाग्य और समृद्धि लाएँ।',en:'May the seven pheras and seven vows around the sacred fire bring you joy, fortune and prosperity.',hn:'Agni ke saat phere, saat vachan — aapke jeevan mein sukh, saubhagya aur samriddhi laayein.'},
+ {ic:'✿',hi:'हर सुबह नई मुस्कान और हर शाम एक नया उत्सव लेकर आए।',en:'May every morning bring a new smile and every evening a new celebration.',hn:'Har subah nayi muskaan aur har shaam ek naya utsav lekar aaye.'},
+ {ic:'❃',hi:'आपका घर-आँगन खुशियों की महक से सदा गुलज़ार रहे।',en:'May your home forever be filled with the fragrance of happiness.',hn:'Aapka ghar-aangan khushiyon ki mehak se sada gulzaar rahe.'},
+ {ic:'✾',hi:'ईश्वर आपकी जोड़ी को सदा सलामत रखे — आप दोनों को ढेरों आशीर्वाद।',en:'May God keep your pair safe and blessed always — heartfelt blessings to you both.',hn:'Ishwar aapki jodi ko sada salamat rakhe — aap dono ko dher saare aashirvaad.'},
+ {ic:'❋',hi:'सात जन्मों का यह साथ हर दिन और भी खूबसूरत होता जाए।',en:'May this bond of seven lifetimes grow more beautiful with every passing day.',hn:'Saat janmon ka ye saath har din aur bhi khoobsurat hota jaye.'}
+];
+
+/* ================= Helpers ================= */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const mk=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild};
+const L=['hi','en','hn'];
+let lang='hi';try{const s=localStorage.getItem('lang');if(L.includes(s))lang=s}catch(e){}
+const pick=o=>o[lang==='hi'?'hi':'en'];
+const fill=s=>s.replace(/\{(\w+)\}/g,(m,k)=>{if(k==='bride'||k==='groom'||CONFIG.names[k])return pick(CONFIG.names[k]);return m});
+
+/* ============ Build photo frames ============ */
+const EXT=['jpg','jpeg','png','webp','JPG','JPEG','PNG','WEBP'];
+function loadImg(img,base){
+  let i=0;img.src=base+'.'+EXT[0];
+  img.onerror=()=>{i++;if(i<EXT.length){img.src=base+'.'+EXT[i]}else{img.onerror=null;img.parentElement.classList.add('missing')}};
+}
+function frame(base,cls,n){
+  const f=mk(`<figure class="frame ${cls}"><img alt="Aarushi &amp; Ajeet photo ${n}" decoding="async"><span class="ph">❀<small>Photo ${n}</small></span></figure>`);
+  const img=f.querySelector('img');loadImg(img,base);
+  f.onclick=()=>{if(!f.classList.contains('missing'))openLb(img.currentSrc||img.src)};
+  return f;
+}
+CONFIG.images.rect.forEach((b,i)=>{const c=mk('<div class="cell rv"></div>');c.style.setProperty('--d',(i*.12)+'s');c.append(frame(b,'rect',i+1));$('#rects').append(c)});
+CONFIG.images.round.forEach((b,i)=>{const c=mk('<div class="r-wrap rv"></div>');c.style.setProperty('--d',(i*.15)+'s');c.append(frame(b,'round',CONFIG.images.rect.length+i+1));$('#rounds').append(c)});
+
+/* Lightbox */
+function openLb(src){$('#lb img').src=src;$('#lb').hidden=false}
+$('#lb').onclick=()=>{$('#lb').hidden=true};
+addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').hidden=true});
+
+/* ============ Build Gita + Wishes ============ */
+GITA.forEach((g,i)=>{
+  const s=mk('<div class="slide"><p class="sk"></p><p class="gref"></p><p class="gm"></p></div>');
+  s.querySelector('.sk').textContent=g.sk;$('#slides').append(s);
+  const d=mk('<button class="dot" aria-label="Verse"></button>');d.onclick=()=>{gShow(i);gAuto()};$('#gDots').append(d);
+});
+let gi=0,gt;
+function gShow(n){gi=(n+GITA.length)%GITA.length;$$('.slide').forEach((s,i)=>s.classList.toggle('on',i===gi));$$('.dot').forEach((d,i)=>d.classList.toggle('on',i===gi))}
+function gAuto(){clearInterval(gt);gt=setInterval(()=>gShow(gi+1),10000)}
+$('#gPrev').onclick=()=>{gShow(gi-1);gAuto()};$('#gNext').onclick=()=>{gShow(gi+1);gAuto()};
+let tx=0;const gb=$('#gitaBox');
+gb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+gb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){gShow(gi+(dx<0?1:-1));gAuto()}});
+gShow(0);gAuto();
+
+WISHES.forEach((w,i)=>{const c=mk(`<div class="wish rv"><i>${w.ic}</i><p data-w="${i}"></p></div>`);c.style.setProperty('--d',((i%3)*.12)+'s');$('#wgrid').append(c)});
+
+/* ============ Apply language ============ */
+function fmtDate(){return new Date(CONFIG.dateISO).toLocaleDateString(lang==='hi'?'hi-IN':'en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Kolkata'})}
+function apply(){
+  const R=document.documentElement;R.lang=lang==='hi'?'hi':'en';R.dataset.lang=lang;
+  $$('[data-t]').forEach(e=>{const k=e.dataset.t;e.innerHTML=fill(I18N[lang][k]??I18N.hi[k]??'')});
+  $$('[data-name]').forEach(e=>{e.textContent=pick(CONFIG.names[e.dataset.name])});
+  $('#heroDate').textContent=$('#dDate').textContent=fmtDate();
+  const loc=lang==='hi'?'hi-IN':'en-IN',dd=new Date(CONFIG.dateISO),tz={timeZone:'Asia/Kolkata'};
+  $('#scrDate').textContent=dd.toLocaleDateString(loc,{day:'numeric',month:'long',year:'numeric',...tz});
+  $('#scrDay').textContent=dd.toLocaleDateString(loc,{weekday:'long',...tz})+' • '+I18N[lang].scr_dayt;
+  $('#dTime').textContent=CONFIG.time[lang];
+  $('#dVenue').textContent=pick(CONFIG.venue);
+  $('#hName').textContent=pick(CONFIG.host.name);$('#hAddr').textContent=pick(CONFIG.host.address);
+  const ph=CONFIG.host.phone,a=$('#hPhone');a.textContent=ph;
+  if(ph.replace(/\D/g,'').length>=8)a.href='tel:'+ph.replace(/[^\d+]/g,'');else a.removeAttribute('href');
+  $$('.slide').forEach((s,i)=>{const g=GITA[i];s.querySelector('.gref').textContent=I18N[lang].gita_ref.replace('{c}',g.c).replace('{v}',g.v);s.querySelector('.gm').textContent=g.m[lang]});
+  $$('[data-w]').forEach(p=>{p.textContent=WISHES[p.dataset.w][lang]});
+  $('#langLbl').textContent={hi:'हिं',en:'EN',hn:'Hn'}[lang];
+  const s=new Date(CONFIG.dateISO),e=new Date(s.getTime()+4*36e5),f=d=>d.toISOString().replace(/[-:]|\.\d{3}/g,'');
+  $('#calBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(fill(I18N[lang].cal_title))+'&dates='+f(s)+'/'+f(e)+'&location='+encodeURIComponent(pick(CONFIG.venue));
+  $('#mapBtn').href=CONFIG.mapUrl||'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(CONFIG.mapQuery||CONFIG.venue.en);
+  $('#venueCard').href=$('#mapBtn').href;
+  $('#waBtn').href='https://wa.me/'+(CONFIG.whatsapp||'').replace(/\D/g,'')+'?text='+encodeURIComponent(fill(I18N[lang].wa_msg));
+  document.title=pick(CONFIG.names.bride)+' & '+pick(CONFIG.names.groom)+' | '+I18N[lang].hero_top.replace(/\|/g,'').trim();
+  try{localStorage.setItem('lang',lang)}catch(e){}
+}
+$('#langBtn').onclick=()=>{
+  lang=L[(L.indexOf(lang)+1)%L.length];
+  const m=$('main');m.style.opacity=0;
+  setTimeout(()=>{apply();m.style.opacity=1},200);
+};
+apply();
+
+/* ============ Countdown ============ */
+const T=new Date(CONFIG.dateISO).getTime();
+function tick(){
+  const d=Math.max(0,T-Date.now()),p=n=>String(n).padStart(2,'0');
+  $('#cdD').textContent=Math.floor(d/864e5);$('#cdH').textContent=p(Math.floor(d/36e5)%24);
+  $('#cdM').textContent=p(Math.floor(d/6e4)%60);$('#cdS').textContent=p(Math.floor(d/1e3)%60);
+  $('#cd').hidden=d===0;$('#cdDone').hidden=d!==0;
+}
+tick();setInterval(tick,1000);
+
+/* ============ Music + Front page ============ */
+const bgm=$('#bgm'),mb=$('#musicBtn'),vid=$('#vid');
+const IC_ON='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9a4.2 4.2 0 010 6M18.8 6.5a8 8 0 010 11"/></svg>',IC_OFF='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>';
+function musicUI(on){mb.classList.toggle('on',on);mb.innerHTML=on?IC_ON:IC_OFF}
+function startMusic(){bgm.muted=false;bgm.volume=.55;bgm.play().then(()=>musicUI(true)).catch(()=>musicUI(false))}
+let userChoice=false;
+mb.onclick=()=>{userChoice=true;if(bgm.paused){startMusic()}else{bgm.pause();musicUI(false)}};
+bgm.querySelector('source').addEventListener('error',()=>{mb.style.display='none'});
+
+const env=$('#env'),iv=$('#introVideo');let opened=false,tapped=false;
+const INTRO_MS=8000;   /* front page par wait: exactly 8 sec. Badalna ho to sirf yahi number badlo */
+function openInv(){
+  if(opened)return;opened=true;
+  env.classList.add('done');setTimeout(()=>env.remove(),1300);   /* video fade-out ke saath chalta rehta hai */
+  document.body.classList.remove('lock');document.body.classList.add('go');
+  scrollTo(0,0);
+}
+/* Front page (Smindex.html jaisa): tap = video + music shuru, theek 8 sec baad website. Video file ho ya na ho, turant redirect nahi hoga */
+function tapOpen(){
+  if(tapped)return;tapped=true;
+  startMusic();
+  setTimeout(openInv,INTRO_MS);
+  iv.addEventListener('error',()=>env.classList.add('novid'));
+  if(iv.error)env.classList.add('novid');
+  iv.play().catch(()=>{});
+}
+env.addEventListener('click',tapOpen);
+env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tapOpen()}});
+[...$('.hero-in').children].forEach((e,i)=>e.style.setProperty('--i',i));
+
+/* Video: music pause/resume */
+vid.querySelector('source').addEventListener('error',()=>$('#vbox').classList.add('missing'));
+let resume=false;
+vid.addEventListener('play',()=>{resume=!bgm.paused;if(resume){bgm.pause();musicUI(false)}});
+const back=()=>{if(resume){resume=false;startMusic()}};
+vid.addEventListener('pause',back);vid.addEventListener('ended',back);
+
+/* ============ Scroll reveal ============ */
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}):null;
+$$('.rv').forEach(e=>io?io.observe(e):e.classList.add('in'));
+
+/* ============ Scratch card (date reveal) ============ */
+(function(){
+  const box=$('#scratchBox'),cv=$('#scratchCv'),cx=cv.getContext('2d',{willReadFrequently:true});
+  let down=false,last=null,moves=0,started=false,done=false;
+  function paint(){
+    const dpr=Math.min(2,devicePixelRatio||1),r=cv.getBoundingClientRect(),W=r.width,H=r.height;
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cx.setTransform(dpr,0,0,dpr,0,0);
+    cx.globalCompositeOperation='source-over';
+    const g=cx.createLinearGradient(0,0,W,H);
+    g.addColorStop(0,'#ff5c9d');g.addColorStop(.35,'#ffc4dc');g.addColorStop(.62,'#ff8fbd');g.addColorStop(1,'#e8307a');
+    cx.fillStyle=g;cx.fillRect(0,0,W,H);
+    cx.strokeStyle='rgba(255,255,255,.2)';cx.lineWidth=9;
+    for(let x=-H;x<W;x+=44){cx.beginPath();cx.moveTo(x,H);cx.lineTo(x+H,0);cx.stroke()}
+    for(let i=0;i<150;i++){cx.fillStyle='rgba(255,255,255,'+(.15+Math.random()*.5)+')';cx.beginPath();cx.arc(Math.random()*W,Math.random()*H,.4+Math.random()*2,0,6.283);cx.fill()}
+  }
+  paint();
+  addEventListener('resize',()=>{if(!started&&!done)paint()});
+  function pos(e){const r=cv.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]}
+  function draw(e){
+    if(!down||done)return;const p=pos(e);
+    cx.globalCompositeOperation='destination-out';cx.strokeStyle='#000';cx.lineWidth=42;cx.lineCap='round';cx.lineJoin='round';
+    cx.beginPath();cx.moveTo(last?last[0]:p[0],last?last[1]:p[1]);cx.lineTo(p[0],p[1]);cx.stroke();last=p;
+    if(!started){started=true;box.classList.add('started')}
+    if(++moves%5===0)check();
+  }
+  function check(){
+    const d=cx.getImageData(0,0,cv.width,cv.height).data;let c=0,t=0;
+    for(let i=3;i<d.length;i+=160){t++;if(d[i]<40)c++}
+    if(c/t>.5)reveal();
+  }
+  function reveal(){if(done)return;done=true;box.classList.add('done');if(window.burst)window.burst()}
+  cv.addEventListener('pointerdown',e=>{down=true;last=null;try{cv.setPointerCapture(e.pointerId)}catch(_){}draw(e)});
+  cv.addEventListener('pointermove',draw);
+  const up=()=>{down=false;last=null};
+  cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
+})();
+
+/* ============ Falling petals ============ */
+(function(){
+  window.burst=function(){};
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const c=$('#petals'),x=c.getContext('2d');let W,H;
+  const size=()=>{W=c.width=innerWidth;H=c.height=innerHeight};size();addEventListener('resize',size);
+  const cols=['255,170,205','255,214,232','255,255,255','255,120,175'],N=innerWidth<700?16:28;
+  const mkp=init=>({x:Math.random()*W,y:init?Math.random()*H:-20,s:6+Math.random()*9,vy:.5+Math.random()*1,vx:-.3+Math.random()*.6,r:Math.random()*6.28,vr:(Math.random()-.5)*.03,sw:Math.random()*6.28,c:cols[Math.random()*cols.length|0],a:.5+Math.random()*.4,g:0});
+  const P=Array.from({length:N},()=>mkp(true));
+  window.burst=function(){for(let i=0;i<46;i++){const p=mkp(false);p.x=W/2+(Math.random()-.5)*W*.5;p.y=H*.45;p.vy=-2-Math.random()*5;p.vx=(Math.random()-.5)*6;p.g=.1;p.b=true;P.push(p)}};
+  function draw(p){
+    x.save();x.translate(p.x,p.y);x.rotate(p.r);x.scale(1,.6+.4*Math.sin(p.sw));x.beginPath();
+    x.moveTo(0,-p.s);x.bezierCurveTo(p.s,-p.s*.6,p.s*.8,p.s*.7,0,p.s);x.bezierCurveTo(-p.s*.8,p.s*.7,-p.s,-p.s*.6,0,-p.s);
+    x.fillStyle='rgba('+p.c+','+p.a+')';x.fill();x.restore();
+  }
+  (function loop(){
+    x.clearRect(0,0,W,H);
+    for(let i=P.length-1;i>=0;i--){const p=P[i];p.vy+=p.g;p.y+=p.vy;p.x+=p.vx+Math.sin(p.sw)*.4;p.r+=p.vr;p.sw+=.03;if(p.y>H+20){if(p.b){P.splice(i,1);continue}Object.assign(p,mkp(false))}draw(p)}
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>
